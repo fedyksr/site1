@@ -45,10 +45,14 @@
           <li><a class="nav-link scrollto" href="#services">خدمات</a></li>
           <li><a class="nav-link scrollto " href="#portfolio">الخريطة</a></li>
           <li><a class="nav-link scrollto" href="#team">فريق العمل</a></li>
-          <li class="dropdown"><a href="#"><span>التسجيل</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="#"><span>   المستعمل : زائر(ة) الموقع</span> <i class="bi bi-chevron-down"></i></a>
+            {% if request.user.etudiant %}
+               <li> <a href="{% url 'cuhc:etudiantlogout' %}">خروج</a></li>
+            {% else %}
             <ul>
-              <li><a href="#">الدخول</a></li>
-              <li><a href="#">تسجيل أول مرّة</a></li>
+              <li><a href="{% url 'cuhc:etudiantregistration' %}">التسجيل</a></li>
+              <li><a href="{% url 'cuhc:etudiantlogin' %}">الدخول</a></li>
+            {% endif %}
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="#contact">اتصل بنا</a></li>

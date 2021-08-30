@@ -5,7 +5,7 @@ from cuhc import views
 
 app_name = "cuhc"
 urlpatterns = [
-
+    path('',views.cuhcpage,name='home'),
      path("register/",
           EtudiantRegistrationView.as_view(), name="etudiantregistration"),
 

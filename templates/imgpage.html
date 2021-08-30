@@ -1,0 +1,12 @@
+{% extends 'index1.html' %}
+{% block title %}My image Page{% endblock %}
+{%block content%}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                {%load static%}
+                <img src="{% static 'images/cuhc.png' %}" class="img-fluid" alt="responsive image">
+            </div>
+        </div>
+    </div>
+{%endblock%}

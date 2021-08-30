@@ -1,11 +1,16 @@
-from os import name
 from django.urls import path
-from django.urls.resolvers import URLPattern
-from . import views
+from .views import *
+from cuhc import views
+
+
+app_name = "cuhc"
 urlpatterns = [
-    path('',views.cuhcpage,name='cuhcpage'),
-    path('cuhcsecpage',views.cuhcsecpage,name='cuhcsecpage'),
-    path('cuhcthirdpage',views.cuhcthirdpage,name='cuhcthirdpage'),
-    path('myimgpage',views.myimgpage,name='myimgpage'),
+
+     path("register/",
+          EtudiantRegistrationView.as_view(), name="etudiantregistration"),
+
+    path("logout/", EtudiantLogoutView.as_view(), name="etudiantlogout"),
+    path("login/", EtudiantLoginView.as_view(), name="etudiantlogin"),
 
 ]
+

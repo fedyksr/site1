@@ -1,0 +1,24 @@
+
+{% extends 'base.html' %}
+
+
+{% block content %}
+<style>
+    .errorlist{
+        color: red;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <h3> <center>  تسجيل  الطلبة  </center> </h3><hr>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button class="btn btn-primary">تسجيل</button>
+            </form>
+            <p> Already have an account? <a href="{% url 'cuhc:etudiantlogin' %}">دخول</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}

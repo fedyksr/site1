@@ -14,8 +14,8 @@ class Migration(migrations.Migration):
             name='images',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('id_image', models.IntegerField()),
-                ('image', models.ImageField(upload_to='static/assets/img')),
+                ('id_image', models.CharField()),
+                ('image', models.ImageField(upload_to='uploads/% Y/% m/% d/')),
             ],
         ),
     ]

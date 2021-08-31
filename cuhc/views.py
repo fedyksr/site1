@@ -12,10 +12,12 @@ from .forms import *
 # Create your views here.
 def cuhcpage(request):
     list_articles=article.objects.all()
-    context={"liste_articles":list_articles}
     list_img=images.objects.all()
-    context={"liste_img":list_img}
+    context={"liste_articles":list_articles,"liste_img":list_img}
     return render(request,"index1.html",context)
+
+
+
 
 
 class EtudiantRegistrationView(CreateView):

@@ -4,48 +4,72 @@
 
 {% block content %}
    <!-- ======= About Boxes Section ======= -->
-   <section id="about-boxes" class="about-boxes">
+   <section id="contact" class="contact">
     <div class="container" data-aos="fade-up">
 
-      <div class="row">
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-          <div class="card">
-            <img src="{%static 'assets/img/about-boxes-1.jpg'%}" class="card-img-top" alt="...">
-            <div class="card-icon">
-              <i class="ri-brush-4-line"></i>
+  <div class=" section-title">
+      <h2>الاتصال</h2>
+      <p>اتصل بنا</p>
+    </div>
+
+    <div class="row">
+
+      <div class="col-lg-6">
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="info-box">
+              <i class="bx bx-map"></i>
+              <h3>العنوان </h3>
+              <p>شارع السلام 1162 حمام الشط بن عروس تونس</p>
             </div>
-            <div class="card-body">
-              <h5 class="card-title"><a href="">Our Mission</a></h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+          </div>
+          <div class="col-md-6">
+            <div class="info-box mt-4">
+              <i class="bx bx-envelope"></i>
+              <h3>Email </h3>
+              <p>info@example.com<br>contact@example.com</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="info-box mt-4">
+              <i class="bx bx-phone-call"></i>
+              <h3>الهاتف </h3>
+              <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-          <div class="card">
-            <img src="{%static 'assets/img/about-boxes-2.jpg'%}" class="card-img-top" alt="...">
-            <div class="card-icon">
-              <i class="ri-calendar-check-line"></i>
+
+      </div>
+
+      <div class="col-lg-6 mt-4 mt-lg-0">
+        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
             </div>
-            <div class="card-body">
-              <h5 class="card-title"><a href="">Our Plan</a></h5>
-              <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-          <div class="card">
-            <img src="{%static 'assets/img/about-boxes-3.jpg'%}" class="card-img-top" alt="...">
-            <div class="card-icon">
-              <i class="ri-movie-2-line"></i>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title"><a href="">Our Vision</a></h5>
-              <p class="card-text">Nemo enim ipsam voluptatem quia voluptas sit aut odit aut fugit, sed quia magni dolores eos qui ratione voluptatem sequi nesciunt Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet. </p>
+            <div class="col-md-6 form-group mt-3 mt-md-0">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
             </div>
           </div>
-        </div>
+          <div class="form-group mt-3">
+            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+          </div>
+          <div class="form-group mt-3">
+            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+          </div>
+          <div class="my-3">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your message has been sent. Thank you!</div>
+          </div>
+          <div class="text-center"><button type="submit">Send Message</button></div>
+        </form>
       </div>
 
     </div>
-  </section><!-- End About Boxes Section -->
+
+    </div>
+  </section>
+   <!-- End About Boxes Section -->
 {% endblock %}

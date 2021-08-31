@@ -11,7 +11,9 @@ from .forms import *
 
 # Create your views here.
 def cuhcpage(request):
-    return render(request,'index1.html')
+    list_article=article.objects.all()
+    context={"liste_articles":list_article}
+    return render(request,'index1.html',context)
 
 class EtudiantRegistrationView(CreateView):
     template_name = "etudiantregistration.html"

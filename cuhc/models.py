@@ -13,9 +13,7 @@ class Etudiant(models.Model):
 class article (models.Model):
     title=models.CharField(max_length=50)
     desc=models.TextField()
-    image=models.ImageField(upload_to='')
     created_at=models.DateTimeField(auto_now_add=True)
-    uploded_at=models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.full_name

@@ -148,21 +148,21 @@
       <div class="container" data-aos="fade-up">
 
         <div class="row">
-        {% For article in liste_articles %}
+        {% for article in liste_articles %}
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="card">
-              <img src="{{article.image.url}}" class="card-img-top" alt="...">
+              <img src="{%static 'assets/img/Alert.jpg'%}" class="card-img-top" alt="...">
               <div class="card-icon">
                 <i class="ri-brush-4-line"></i>
               </div>
               <div class="card-body">
                 <h5 class="card-title"><a href="">{{article.title}}</a></h5>
                 <p class="card-text">{{article.desc|truncatewords:10}}</p>
-                <h6>publier il y a {{article.created_at|timesince</h6>
+                <h6>publier il y a <a>{{article.created_at|timesince</a></h6>
               </div>
             </div>
           </div>
-        {% endFor %}
+        {% endfor %}
           
 
       </div>

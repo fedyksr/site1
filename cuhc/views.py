@@ -13,6 +13,8 @@ from .forms import *
 def cuhcpage(request):
     list_articles=article.objects.all()
     context={"liste_articles":list_articles}
+    list_img=images.objects.all()
+    context={"liste_img":list_img}
     return render(request,"index1.html",context)
 
 

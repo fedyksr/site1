@@ -1,7 +1,4 @@
 from django.db import models
-
-# Create your models here.
-from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
 
@@ -15,7 +12,13 @@ class article (models.Model):
     desc=models.TextField()
     created_at=models.DateTimeField(auto_now_add=True)
 
+class images (models.Model):
+    id_image=models.IntegerField()
+    image=models.ImageField(upload_to='static/assets/img')
+
     def __str__(self):
         return self.full_name
     def __str__(self):
         return self.title
+    def __str__(self):
+        return self.id_image

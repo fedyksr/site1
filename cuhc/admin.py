@@ -4,3 +4,4 @@ from .models import *
 
 admin.site.register([Etudiant])
 admin.site.register(article)
+admin.site.register(images)

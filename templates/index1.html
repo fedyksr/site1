@@ -149,6 +149,7 @@
 
         <div class="row">
           {%for art in liste_articles%}
+          {%load static%}
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="card">
               <img src="{%static 'assets/img/Alert.jpg'%}" class="card-img-top" alt="...">
@@ -157,8 +158,9 @@
               </div>
               <div class="card-body">
                 <h5 class="card-title"><a href="">{{art.title}}</a></h5>
-                <p class="card-text">{{art.desc}}</p>
-                <h6>publier il ya :{{art.created_at}}</h6>
+                <p class="card-text">{{art.desc|truncatewords:5}}</p>
+                <a href="{{art.pdf.url}}">اقرأ المزيد</a>
+                <h6>publier il ya :{{art.created_at|timesince}}</h6>
           
               </div>
             </div>
@@ -251,7 +253,7 @@
           <div class="col-md-6 mt-4 mt-md-0">
             <div class="icon-box">
               <i class="bi bi-clock"></i>
-              <h4><a href="#">نتائج دراسة المساعدات الاجتماعيّة</a></h4>
+              <h4><a href="https://www.ooun.rnu.tn/aide_sociale/">نتائج دراسة المساعدات الاجتماعيّة</a></h4>
               <p>يمكنك من خلال هذا الرابط متابعة وضعيّة ملفك المتعلق بالمساعدة الاجتماعيّة</p>
             </div>
           </div>
@@ -261,25 +263,16 @@
     </section><!-- End Services Section -->
 
     <!-- ======= Testimonials Section ======= -->
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
-
-        {%for img in liste_img%}
-        <div class="carousel-item active">
-          <img src="{{img.image.url}}" class="rounded mx-auto d-block" alt="...">
+        <div class="row">
+          {%for image in liste_img%}
+        <div class="carousel-item">
+          <img class="d-block w-100" src="{{ image.image.url }}" alt="First slide">
         </div>
-        {%endfor%}
-        
+          {%endfor%}
+        </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
     </div>
     <!-- End Testimonials Section -->
 

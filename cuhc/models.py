@@ -11,10 +11,12 @@ class article (models.Model):
     title=models.CharField(max_length=50)
     desc=models.TextField()
     created_at=models.DateTimeField(auto_now_add=True)
+    pdf=models.FileField(blank=True)
 
 class images (models.Model):
     id_image=models.CharField(max_length=50)
-    image=models.ImageField(upload_to='static/assets/img/uploads/')
+    image=models.ImageField(blank=True)
+    
 
     def __str__(self):
         return self.full_name

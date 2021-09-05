@@ -1,4 +1,6 @@
 from django import forms
+from django.db.models.fields import CharField
+from django.forms.widgets import Widget
 from .models import Etudiant
 from django.contrib.auth.models import User
 
@@ -7,7 +9,7 @@ class EtudiantRegistrationForm(forms.ModelForm):
     username = forms.CharField(widget=forms.TextInput())
     password = forms.CharField(widget=forms.PasswordInput())
     email = forms.CharField(widget=forms.EmailInput())
-
+    
     class Meta:
         model = Etudiant
         fields = ["username", "password", "email", "full_name", ]

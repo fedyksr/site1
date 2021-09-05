@@ -1,5 +1,5 @@
 
-{% extends 'base.html' %}
+{% extends 'base1.html' %}
 
 
 {% block content %}
@@ -13,9 +13,11 @@
         <div class="col-md-6 mx-auto">
             <h3> <center>  تسجيل  الطلبة  </center> </h3><hr>
             <form action="" method="POST">
+                <div class="row">
                 {% csrf_token %}
                 {{form.as_p}}
                 <button class="btn btn-primary">تسجيل</button>
+            </div>
             </form>
             <p> Already have an account? <a href="{% url 'cuhc:etudiantlogin' %}">دخول</a></p>
         </div>

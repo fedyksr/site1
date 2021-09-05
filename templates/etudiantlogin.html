@@ -1,5 +1,5 @@
-
-{% extends 'base.html' %}
+<html>
+{% extends 'base1.html' %}
 
 {% block content %}
 <style>
@@ -13,6 +13,7 @@
             <h3>الدخول</h3>
             <hr>
             <form action="" method="POST">
+                <div class="row">
                 {% csrf_token %}
                 {{form.as_p}}
                 <button class="btn btn-primary">الارسال</button>
@@ -22,6 +23,8 @@
             </form>
             <p> or dont have account? <a href="{% url 'cuhc:etudiantregistration' %}{% if request.GET.next %}?next={{request.GET.next}}{% endif %}">الارسال</a></p>
         </div>
+        </div>
     </div>
 </div>
 {% endblock %}
+</html>

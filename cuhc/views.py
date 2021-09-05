@@ -8,6 +8,7 @@ from django.template import loader
 from django.views.generic.edit import CreateView, FormView
 from .models import *
 from .forms import *
+from django.core.mail import message, send_mail
 
 # Create your views here.
 def cuhcpage(request):
@@ -69,3 +70,14 @@ class  EtudiantLoginView(FormView):
             return next_url
         else:
             return self.success_url
+
+def contact(request):
+    if request.methode=="POST":
+        message_name=request.POST['message_name']
+        message_email=request.POST['message_email']
+        subject=request.POST['subject']
+        message=request.POST['message']
+
+        send_mail(
+            
+        )
